@@ -1,9 +1,9 @@
 export class User {
     id: number = 0;
-    userName: string = "";
+    username: string = "";
     password: string = "";
-    firstName: string = "";
-    lastName: string = "";
+    firstname: string = "";
+    lastname: string = "";
     phone: string ="";
     email: string="";
     isReviewer: boolean = false;

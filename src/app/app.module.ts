@@ -12,6 +12,12 @@ import { UserListComponent } from './sales/user/user-list/user-list.component';
 import { UserDetailComponent } from './sales/user/user-detail/user-detail.component';
 import { UserCreateComponent } from './sales/user/user-create/user-create.component';
 import { UserEditComponent } from './sales/user/user-edit/user-edit.component';
+import { BoolDisplayPipe } from './bool-display.pipe';
+import { UserLoginComponent } from './sales/user/user-login/user-login.component';
+import { VendorListComponent } from './sales/vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './sales/vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './sales/vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './sales/vendor/vendor-edit/vendor-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,12 @@ import { UserEditComponent } from './sales/user/user-edit/user-edit.component';
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
+    BoolDisplayPipe,
+    UserLoginComponent,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorEditComponent,
 
   ],
   imports: [
