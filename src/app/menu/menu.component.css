@@ -1,0 +1,19 @@
+nav{
+    background-color: black;
+}
+ul{
+    padding-left: 0;
+    margin-left: 0;
+}
+li{
+    display: inline-block;
+}
+a{
+    color: whitesmoke;
+    padding: 0 10px;
+    text-decoration: none;
+}
+a:hover{
+    color: aqua;
+    background-color: blueviolet;
+}
