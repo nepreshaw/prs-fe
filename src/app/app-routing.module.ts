@@ -11,6 +11,10 @@ import { VendorListComponent } from './sales/vendor/vendor-list/vendor-list.comp
 import { VendorCreateComponent } from './sales/vendor/vendor-create/vendor-create.component';
 import { VendorDetailComponent } from './sales/vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './sales/vendor/vendor-edit/vendor-edit.component';
+import { ProductListComponent } from './sales/product/product-list/product-list.component';
+import { ProductCreateComponent } from './sales/product/product-create/product-create.component';
+import { ProductDetailComponent } from './sales/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './sales/product/product-edit/product-edit.component';
 
 const routes: Routes = [
 {path: "", redirectTo:"/home", pathMatch:"full"},
@@ -26,6 +30,12 @@ const routes: Routes = [
 {path: "vendor/create", component: VendorCreateComponent},
 {path: "vendor/detail/:id", component: VendorDetailComponent},
 {path: "vendor/edit/:id", component: VendorEditComponent},
+
+{path: "product/list", component: ProductListComponent},
+{path: "product/create", component: ProductCreateComponent},
+{path: "product/detail/:id", component: ProductDetailComponent},
+{path: "product/edit/:id", component: ProductEditComponent},
+
 
 
 
