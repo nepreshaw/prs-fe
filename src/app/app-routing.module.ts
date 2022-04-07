@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { E404Component } from './e404/e404.component';
 import { HomeComponent } from './home/home.component';
 import { UserListComponent } from './sales/user/user-list/user-list.component';
@@ -15,6 +16,10 @@ import { ProductListComponent } from './sales/product/product-list/product-list.
 import { ProductCreateComponent } from './sales/product/product-create/product-create.component';
 import { ProductDetailComponent } from './sales/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './sales/product/product-edit/product-edit.component';
+import { RequestCreateComponent } from './sales/request/request-create/request-create.component';
+import { RequestDetailComponent } from './sales/request/request-detail/request-detail.component';
+import { RequestEditComponent } from './sales/request/request-edit/request-edit.component';
+import { RequestListComponent } from './sales/request/request-list/request-list.component';
 
 const routes: Routes = [
 {path: "", redirectTo:"/home", pathMatch:"full"},
@@ -35,6 +40,11 @@ const routes: Routes = [
 {path: "product/create", component: ProductCreateComponent},
 {path: "product/detail/:id", component: ProductDetailComponent},
 {path: "product/edit/:id", component: ProductEditComponent},
+
+{path: "request/list", component: RequestListComponent},
+{path: "request/create", component: RequestCreateComponent},
+{path: "request/detail/:id", component: RequestDetailComponent},
+{path: "reques/edit/:id", component: RequestEditComponent},
 
 
 

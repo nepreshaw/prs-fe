@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -22,6 +21,11 @@ import { ProductCreateComponent } from './sales/product/product-create/product-c
 import { ProductDetailComponent } from './sales/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './sales/product/product-edit/product-edit.component';
 import { ProductListComponent } from './sales/product/product-list/product-list.component';
+import { RequestListComponent } from './sales/request/request-list/request-list.component';
+import { RequestDetailComponent } from './sales/request/request-detail/request-detail.component';
+import { RequestEditComponent } from './sales/request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './sales/request/request-lines/request-lines.component';
+import { RequestCreateComponent } from './sales/request/request-create/request-create.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +47,18 @@ import { ProductListComponent } from './sales/product/product-list/product-list.
     ProductDetailComponent,
     ProductEditComponent,
     ProductListComponent,
+    RequestListComponent,
+    RequestDetailComponent,
+    RequestEditComponent,
+    RequestLinesComponent,
+    RequestCreateComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
