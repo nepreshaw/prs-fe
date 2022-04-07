@@ -23,7 +23,7 @@
             <td>{{p.price | currency}}</td>
             <td>{{p.unit}}</td>
             <td>{{p.photoPath}}</td>
-            <td>{{p.vendor.name}}</td>
+            <td *ngIf="p.vendor">{{p.vendor.name}}</td>
             <td>
                 <a routerLink="/product/detail/{{p.id}}">Detail |</a>
                 <a routerLink="/product/edit/{{p.id}}"> Edit</a>
