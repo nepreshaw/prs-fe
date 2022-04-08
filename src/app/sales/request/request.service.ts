@@ -14,9 +14,21 @@ export class RequestService {
     private http: HttpClient
   ) { }
 
-  //requests(id: number): Observable<Request[]> {
-    //return this.http.get(`${this.baseUrl}`)
-  //}
+  reject(userId: number, req: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/reject/${userId}`, req) as Observable<Request>
+  }
+
+  approve(userId: number, req: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/approve${userId}`, req) as Observable<Request>
+  }
+
+  review(userId: number, req: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/review/${userId}`, req) as Observable<Request>
+  }
+
+  requests(userId: number): Observable<Request[]> {
+    return this.http.get(`${this.baseUrl}/reviews/${userId}`) as Observable<Request[]>
+  }
 
   list(): Observable<Request[]> {
     return this.http.get(`${this.baseUrl}`) as Observable<Request[]>

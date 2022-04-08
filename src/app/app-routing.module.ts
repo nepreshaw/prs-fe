@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { E404Component } from './e404/e404.component';
@@ -20,6 +20,8 @@ import { RequestCreateComponent } from './sales/request/request-create/request-c
 import { RequestDetailComponent } from './sales/request/request-detail/request-detail.component';
 import { RequestEditComponent } from './sales/request/request-edit/request-edit.component';
 import { RequestListComponent } from './sales/request/request-list/request-list.component';
+import { RequestlineCreateComponent } from './sales/requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './sales/requestline/requestline-edit/requestline-edit.component';
 
 const routes: Routes = [
 {path: "", redirectTo:"/home", pathMatch:"full"},
@@ -44,9 +46,10 @@ const routes: Routes = [
 {path: "request/list", component: RequestListComponent},
 {path: "request/create", component: RequestCreateComponent},
 {path: "request/detail/:id", component: RequestDetailComponent},
-{path: "reques/edit/:id", component: RequestEditComponent},
+{path: "request/edit/:id", component: RequestEditComponent},
 
-
+{path: "requestline/create", component: RequestlineCreateComponent},
+{path: "requestliine/edit/:id", component: RequestlineEditComponent},
 
 
 {path: "**", component: E404Component}

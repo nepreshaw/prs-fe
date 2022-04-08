@@ -8,9 +8,11 @@ import { UserLoginComponent } from './sales/user/user-login/user-login.component
 export class SystemService {
 
   constructor(private http: HttpClient) { }
-
-  user: any;
   
+  user: any;
+
+  
+
 
   
   

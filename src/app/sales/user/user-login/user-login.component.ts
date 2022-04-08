@@ -24,7 +24,7 @@ export class UserLoginComponent implements OnInit {
       next: (res) => {
         console.log("Login succesful");
         this.sysserv.user = res;
-        this.router.navigateByUrl("/user/list")
+        this.router.navigateByUrl("/request/list")
       },
       error: (err) => {
         console.error("login unsuccesful")
