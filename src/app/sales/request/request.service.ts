@@ -19,7 +19,7 @@ export class RequestService {
   }
 
   approve(userId: number, req: Request): Observable<any> {
-    return this.http.put(`${this.baseUrl}/approve${userId}`, req) as Observable<Request>
+    return this.http.put(`${this.baseUrl}/approve/${userId}`, req) as Observable<Request>
   }
 
   review(userId: number, req: Request): Observable<any> {

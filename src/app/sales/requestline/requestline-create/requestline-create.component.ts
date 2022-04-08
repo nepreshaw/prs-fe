@@ -44,7 +44,7 @@ export class RequestlineCreateComponent implements OnInit {
   ngOnInit(): void {
     this.reqsvc.list().subscribe({
       next: (res) => {
-        console.debug("Users:", res);
+        console.debug("Requests:", res);
         this.request = res;
       }
     });

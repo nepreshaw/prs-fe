@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <th>Rejection Reason</th>
-            <td><input [(ngModel)]="request.rejectionReason" type="text" ></td>
+            <td><input [(ngModel)]="request.rejectionReason" type="text" readonly ></td>
         </tr>
         <tr>
             <th>Delivery Mode</th>
@@ -26,18 +26,16 @@
         </tr>
         <tr>
             <th>Status</th>
-            <td><input [(ngModel)]="request.status" type="text" ></td>
+            <td><input [(ngModel)]="request.status" type="text" readonly ></td>
         </tr>
         <tr>
             <th>Total</th>
-            <td><input [(ngModel)]="request.total" type="number" ></td>
+            <td><input [(ngModel)]="request.total" type="number" readonly ></td>
         </tr>
         <tr>
-            <th>Vendor Name</th>
-            <td>
-                <select [(ngModel)]="request.userId">
-                    <option *ngFor="let u of users" value="{{ u.id }}">{{ u.username }}</option>
-                </select>
+            <th>User Name</th>
+            <td >
+                <input [ngModel] ="username" type="text" readonly>
             </td>
         </tr>
     </tbody>
