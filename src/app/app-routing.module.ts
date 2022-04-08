@@ -22,6 +22,7 @@ import { RequestEditComponent } from './sales/request/request-edit/request-edit.
 import { RequestListComponent } from './sales/request/request-list/request-list.component';
 import { RequestlineCreateComponent } from './sales/requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './sales/requestline/requestline-edit/requestline-edit.component';
+import { RequestLinesComponent } from './sales/request/request-lines/request-lines.component';
 
 const routes: Routes = [
 {path: "", redirectTo:"/home", pathMatch:"full"},
@@ -44,12 +45,13 @@ const routes: Routes = [
 {path: "product/edit/:id", component: ProductEditComponent},
 
 {path: "request/list", component: RequestListComponent},
+{path: "request/lines/:id", component: RequestLinesComponent},
 {path: "request/create", component: RequestCreateComponent},
 {path: "request/detail/:id", component: RequestDetailComponent},
 {path: "request/edit/:id", component: RequestEditComponent},
 
-{path: "requestline/create", component: RequestlineCreateComponent},
-{path: "requestliine/edit/:id", component: RequestlineEditComponent},
+{path: "requestline/create/:id", component: RequestlineCreateComponent},
+{path: "requestline/edit/:id", component: RequestlineEditComponent},
 
 
 {path: "**", component: E404Component}
