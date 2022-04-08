@@ -30,7 +30,7 @@ export class RequestEditComponent implements OnInit {
   save(): void {
     this.reqsvc.change(this.request).subscribe({
       next: (res) => {
-        console.debug("request updated");
+        console.debug("request updated", res);
         this.router.navigateByUrl("/request/list");
       },
       error: (err) => {
@@ -40,6 +40,7 @@ export class RequestEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.usersvc.list().subscribe({
       next: (res) => {
         console.debug("Users:", res);
