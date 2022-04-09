@@ -1,7 +1,6 @@
 <app-menu></app-menu>
 <div>
     <span id="pageTitle">RequestLine</span> |
-    <a routerLink="/request/">New</a>
 </div>
 <table class="table table-sm" *ngIf="request">
     <thead>
@@ -11,6 +10,7 @@
             <th>Status</th>
             <th>Total</th>
             <th>Username</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -20,10 +20,16 @@
             <td>{{request.status}}</td>
             <td>{{request.total | currency}}</td>
             <td>{{request.user.username}}</td>
+            <td><a routerLink="/request/review/list/">Review</a></td>
+            
            
         </tr>
     </tbody>
 </table>
+<div *ngIf="request"> 
+    <span id="pageTitle">RequestLine</span> |
+    <a routerLink="/requestline/create/{{request.id}}">New</a>
+</div>
 <table class="table table-sm" *ngIf="request">
     <thead>
         <tr>
@@ -32,6 +38,7 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>LineTotal</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody *ngIf="request">
@@ -41,7 +48,8 @@
             <td>{{r.quantity}}</td>
             <td>{{r.product.price | currency}}</td>
             <td>{{r.product.price * r.quantity | currency}}</td>
-           
+            <td><button (click)="edit(r)" class="btn btn-link clickable">Edit</button>
+            <button (click)="delete(r)" class="btn btn-link clickable">Delete</button></td>
         </tr>
     </tbody>
 </table>

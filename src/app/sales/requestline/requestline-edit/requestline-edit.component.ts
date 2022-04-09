@@ -28,21 +28,38 @@ export class RequestlineEditComponent implements OnInit {
   ) { }
 
   save(): void {
+    this.reqlines.productId = this.reqlines.productId;
     this.reqlinesvc.change(this.reqlines).subscribe({
       next: (res) => {
-        console.debug("requestline updated");
-        this.router.navigateByUrl("/request/list")
+        console.debug("rl changed", res)
+        this.router.navigateByUrl(`/request/lines/${this.reqlines.requestId}`);
       },
       error: (err) => {
-        console.error(err)
+        console.debug(err);
       }
     });
   }
 
   ngOnInit(): void {
-    //this.reqsvc.list
-
-    
+    this.prodsvc.list().subscribe({
+      next: (res) => {
+        console.debug("Products:", res);
+        this.product = res;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+    let id = +this.route.snapshot.params["id"];
+    this.reqlinesvc.get(id).subscribe({
+      next: (res) => {
+        console.debug("RequestLines:", res);
+        this.reqlines = res;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
 }

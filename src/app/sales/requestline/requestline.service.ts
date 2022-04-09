@@ -14,6 +14,10 @@ export class RequestlineService {
   constructor(
     private http: HttpClient
   ) { }
+  
+  get(id: number): Observable<RequestLine> {
+    return this.http.get(`${this.baseUrl}/${id}`) as Observable<RequestLine>
+  }
 
   create(req: RequestLine): Observable<RequestLine> {
     return this.http.post(`${this.baseUrl}`, req) as Observable<RequestLine>
@@ -21,5 +25,9 @@ export class RequestlineService {
 
   change(req: RequestLine): Observable<any> {
     return this.http.put(`${this.baseUrl}/${req.id}`, req) as Observable<any>
+  }
+
+  remove(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`) as Observable<RequestLine>
   }
 }
