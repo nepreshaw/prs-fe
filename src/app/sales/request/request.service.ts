@@ -23,7 +23,7 @@ export class RequestService {
   }
   //brings back reviews 
   review(req: Request): Observable<any> {
-    return this.http.put(`${this.baseUrl}/review/${req.id}`, req) as Observable<any>
+    return this.http.put(`${this.baseUrl}/review`, req) as Observable<any>
   }
   //this should bring back all requests from menu click
   //list of reqs that are not your userid

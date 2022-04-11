@@ -21,7 +21,9 @@ export class RequestReviewItemComponent implements OnInit {
     private reqsvc: RequestService
   ) { }
 
+  showReject(): void {
 
+  }
 
   approve(): void {
     this.reqsvc.approve(this.req).subscribe({

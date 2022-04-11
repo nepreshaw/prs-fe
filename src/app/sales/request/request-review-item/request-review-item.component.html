@@ -21,9 +21,14 @@
             <td>{{req.total | currency}}</td>
             <td>{{req.user.username}}</td>
             <td><button (click)="approve()" class="btn btn-link clickable">Approve</button>
-            <button (click)="reject()" class="btn btn-link clickable">Reject</button></td>
+            <td><button (click)="reject()" class="btn btn-link clickable">Reject</button>
+            
+                
         </tr>
-           
+<div>
+    
+    <input [(ngModel)]="req.rejectionReason" type="text">
+</div>
        
     </tbody>
 </table>
