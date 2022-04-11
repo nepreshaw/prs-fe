@@ -17,19 +17,22 @@ export class RequestReviewListComponent implements OnInit {
   request!: Request[];
   reqlines!: RequestLine[];
   user!: User[];
+  
 
   constructor(
     private reqsvc: RequestService,
     private usersvc: UserService,
     private reqlsvc: RequestlineService,
-    private sys: SystemService
+    private sys: SystemService,
+   
   ) { }
 
-  
+ 
 
 
 
   ngOnInit(): void {
+    this.sys.chkLogin();
     this.reqsvc.requests(this.sys.user.id).subscribe({
       next: (res) => {
         this.request = res;
@@ -42,4 +45,4 @@ export class RequestReviewListComponent implements OnInit {
   }
   }
 
-
+  //review looks like the request lines

@@ -20,6 +20,7 @@ export class UserLoginComponent implements OnInit {
   ) { }
   
   submit(): void {
+    this.sysserv.user = null;
     this.usersvc.login(this.username, this.password).subscribe({
       next: (res) => {
         console.log("Login succesful");

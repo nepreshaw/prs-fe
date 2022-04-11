@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RequestLine } from '../../requestline/requestline.class';
 import { Request } from '../../request/request.class';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RequestlineService } from '../../requestline/requestline.service';
 import { SystemService } from 'src/app/system.service';
 import { RequestService } from '../request.service';
 
@@ -19,18 +17,34 @@ export class RequestReviewItemComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private reqlsvc: RequestlineService,
-    private reql: RequestLine,
     private sys: SystemService,
     private reqsvc: RequestService
   ) { }
 
-  approve(): void {
 
+
+  approve(): void {
+    this.reqsvc.approve(this.req).subscribe({
+      next: (res) => {
+        console.debug("approved", res)
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   reject(): void {
-
+    this.reqsvc.reject(this.req).subscribe({
+      next: (res) => {
+        console.debug("rejected", res)
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err)
+      }
+    });
   }
 
   // review(): void {
@@ -47,7 +61,7 @@ export class RequestReviewItemComponent implements OnInit {
   // }
 
   refresh(): void {
-    let id = this.route.snapshot.params["id"]
+    let id = this.route.snapshot.params["requestid"]
     this.reqsvc.get(id).subscribe({
       next: (res) => {
         console.log(res);
@@ -56,6 +70,7 @@ export class RequestReviewItemComponent implements OnInit {
     });
   }
 
+  
   ngOnInit(): void {
     this.refresh();
   }
