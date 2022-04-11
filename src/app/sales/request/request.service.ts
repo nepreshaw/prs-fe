@@ -14,20 +14,21 @@ export class RequestService {
     private http: HttpClient
   ) { }
 
-  reject(userId: number, req: Request): Observable<any> {
-    return this.http.put(`${this.baseUrl}/reject/${userId}`, req) as Observable<Request>
+  reject(req: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/reject/${req.id}`, req) as Observable<Request>
   }
 
-  approve(userId: number, req: Request): Observable<any> {
-    return this.http.put(`${this.baseUrl}/approve/${userId}`, req) as Observable<Request>
+  approve(req: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/approve/${req.id}`, req) as Observable<Request>
   }
-
-  review(userId: number, req: Request): Observable<any> {
-    return this.http.put(`${this.baseUrl}/review/${userId}`, req) as Observable<Request>
+  //brings back reviews 
+  review(req: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/review`, req) as Observable<any>
   }
-
+  //this should bring back all requests from menu click
+  //list of reqs that are not your userid
   requests(userId: number): Observable<Request[]> {
-    return this.http.get(`${this.baseUrl}/reviews/${userId}`) as Observable<Request[]>
+    return this.http.get(`${this.baseUrl}/review/${userId}`) as Observable<Request[]>
   }
 
   list(): Observable<Request[]> {

@@ -20,10 +20,10 @@
             <td>{{request.status}}</td>
             <td>{{request.total | currency}}</td>
             <td>{{request.user.username}}</td>
-            <td><a routerLink="/request/review/list/">Review</a></td>
-            
-           
+            <td><button (click)="review()" class="btn btn-link clickable">Review</button></td>
         </tr>
+           
+       
     </tbody>
 </table>
 <div *ngIf="request"> 

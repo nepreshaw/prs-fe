@@ -4,6 +4,7 @@ import { SystemService } from 'src/app/system.service';
 import { Request } from '../../request/request.class';
 import { RequestLine } from '../../requestline/requestline.class';
 import { RequestlineService } from '../../requestline/requestline.service';
+import { User } from '../../user/user.class';
 import { RequestService } from '../request.service';
 
 @Component({
@@ -14,6 +15,7 @@ import { RequestService } from '../request.service';
 export class RequestLinesComponent implements OnInit {
 
   request!: Request
+  user!: User
 
   constructor(
     private sys: SystemService,
@@ -24,8 +26,29 @@ export class RequestLinesComponent implements OnInit {
   ) { }
 
   review(): void {
-    
+    this.reqsvc.review(this.request).subscribe({
+      next: (res) => {
+        console.debug("reviewed", res)
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
+
+    // submit(): void {
+  //   this.usersvc.login(this.username, this.password).subscribe({
+  //     next: (res) => {
+  //       console.log("Login succesful");
+  //       this.sysserv.user = res;
+  //       this.router.navigateByUrl("/request/list")
+  //     },
+  //     error: (err) => {
+  //       console.error("login unsuccesful")
+  //     }
+  //   });
+  // }
 
   delete(reqline: RequestLine): void {
     this.reqsline.remove(reqline.id).subscribe({

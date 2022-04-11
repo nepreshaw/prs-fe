@@ -11,6 +11,9 @@ export class SystemService {
   
   user: any;
 
+  loggedUser() {
+    return this.user;
+  }
   
 
 
